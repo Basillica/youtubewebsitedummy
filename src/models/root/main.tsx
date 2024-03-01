@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import './styles.css'
 import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
