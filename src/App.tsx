@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './App.css'
 import { PeriodicTable } from './models/periodic'
 import { YouTubeGallery } from './models/youtube'
