@@ -1,7 +1,6 @@
 // @ts-nocheck
-
 import './styles.css'
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { TextureLoader } from "three";
 import {

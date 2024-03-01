@@ -1,4 +1,5 @@
 // @ts-nocheck
+import React from 'react'
 import './App.css'
 import * as THREE from 'three'
 import { useRef, useState } from 'react'

@@ -1,4 +1,5 @@
 // @ts-nocheck
+import React from 'react'
 import { Canvas } from "react-three-fiber";
 import { useLoader } from "@react-three/fiber";
 // import { TextureLoader } from "three/src/loaders/TextureLoader";
