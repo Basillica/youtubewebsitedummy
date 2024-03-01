@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './App.css'
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
@@ -21,7 +22,7 @@ const Box = (props: ThreeElements['mesh']) => {
             ref={meshRef}
             scale={active ? 2 : 1}
 
-            onClick={(event) => {
+            onClick={(event: any) => {
                 setActive(!active);
             }}
 

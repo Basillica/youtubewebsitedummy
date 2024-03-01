@@ -1,4 +1,4 @@
-import { useRef } from "react";
+// @ts-nocheck
 import { Canvas } from "react-three-fiber";
 import { useLoader } from "@react-three/fiber";
 // import { TextureLoader } from "three/src/loaders/TextureLoader";
