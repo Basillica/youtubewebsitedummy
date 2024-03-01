@@ -14,9 +14,9 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route index element={<RootPage />} />
-        <Route path="youtube" element={<YouTubeGallery />} />
-        <Route path="archive" element={<PeriodicTable />} />
-        <Route path="projects" element={<PeriodicTable />} />
+        <Route path="/youtube" element={<YouTubeGallery />} />
+        <Route path="/archive" element={<PeriodicTable />} />
+        <Route path="/projects" element={<PeriodicTable />} />
       </Routes>
     </>
   );
