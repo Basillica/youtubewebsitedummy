@@ -1,6 +1,6 @@
 // @ts-nocheck
 import './styles.css'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { TextureLoader } from "three";
 import {
@@ -10,9 +10,33 @@ import {
 import { OrbitControls, Sky, Stars, useGLTF } from '@react-three/drei'
 import { Glitch } from '../../components/glitch';
 import { useLoader } from "@react-three/fiber";
+import { PeriodicTable } from '../periodic'
+import { YouTubeGallery } from '../youtube'
 
 
-const App = () => {
+const App = (props) => {
+
+    return (
+        <>
+            {
+                props.state === "HOME" && <Home />
+            }
+            {
+                props.state === "YOUTUBE" && <YouTubeGallery />
+            }
+            {
+                props.state === "ARCHIVE" && <PeriodicTable />
+            }
+            {
+                props.state === "UPCOMING" && <PeriodicTable />
+            }
+        </>
+
+    )
+}
+
+
+const Home = () => {
     const colorMap2 = useLoader(TextureLoader, 'house_4k.jpeg')
     return (
         <>
@@ -80,10 +104,8 @@ const App = () => {
                 </Canvas>
             </div>
         </>
-
     )
 }
-
 function Model(props) {
     const mesh = useRef();
     const { nodes, materials } = useGLTF("scene.gltf");
