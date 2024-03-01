@@ -2,7 +2,7 @@
 import React from 'react'
 import './style.css';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
     return (
         <nav style={{ position: "absolute", top: 0, left: 0, width: "95%", paddingRight: "40px", paddingLeft: "40px" }}>
             <h1> <a href="/">🎓MakeDevEasy</a> </h1>

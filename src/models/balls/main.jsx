@@ -11,7 +11,7 @@ import {
     Sphere
 } from "@react-three/drei";
 
-const name = (texture: any, type: any) => `${texture}-JPG_${type}.jpg`;
+const name = (texture, type) => `${texture}-JPG_${type}.jpg`;
 export default function App() {
     const [
         colorMap,

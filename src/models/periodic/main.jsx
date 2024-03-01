@@ -9,10 +9,10 @@ import './styles.css'
 
 
 
-const PeriodicTable: React.FC = () => {
-    const rendererRef = useRef<CSS3DRenderer | null>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const controlsRef = useRef<TrackballControls | null>(null);
+const PeriodicTable = () => {
+    const rendererRef = useRef(null);
+    const containerRef = useRef(null);
+    const controlsRef = useRef(null);
 
     const table = [
         'H', 'Hydrogen', '1.00794', 1, 1,
@@ -135,13 +135,13 @@ const PeriodicTable: React.FC = () => {
         'Og', 'Oganesson', '(294)', 18, 7
     ];
 
-    let camera: THREE.PerspectiveCamera,
-        scene: THREE.Scene,
-        renderer: CSS3DRenderer,
-        controls: TrackballControls;
+    let camera,
+        scene,
+        renderer,
+        controls;
 
-    const objects: CSS3DObject[] = [];
-    const targets: { [key: string]: THREE.Object3D[] } = {
+    const objects = [];
+    const targets = {
         table: [],
         sphere: [],
         helix: [],
@@ -230,7 +230,7 @@ const PeriodicTable: React.FC = () => {
         renderer = new CSS3DRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         if (container.childElementCount === 1) {
-            container.removeChild(container.firstChild!);
+            container.removeChild(container.firstChild);
         };
         container.appendChild(renderer.domElement);
         // container.style.width = "95%";
@@ -251,7 +251,7 @@ const PeriodicTable: React.FC = () => {
         animate();
     }, []);
 
-    function transform(targets: THREE.Object3D[], duration: number) {
+    function transform(targets, duration) {
         TWEEN.removeAll();
         new TWEEN.Tween({})
             .to({}, duration * 2)

@@ -5,14 +5,14 @@ import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
 import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 import { Glitch } from '../../components/glitch';
 
-const YouTubeGallery: React.FC = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    let camera: THREE.PerspectiveCamera,
-        scene: THREE.Scene,
-        renderer: CSS3DRenderer,
-        controls: TrackballControls;
+const YouTubeGallery = () => {
+    const containerRef = useRef(null);
+    let camera,
+        scene,
+        renderer,
+        controls;
 
-    function Element(id: string, x: number, y: number, z: number, ry: number, rx: number = -1): CSS3DObject {
+    function Element(id, x, y, z, ry, rx = -1) {
         const div = document.createElement('div');
         div.style.width = '640px';
         div.style.height = '360px';
@@ -36,7 +36,7 @@ const YouTubeGallery: React.FC = () => {
         return object;
     }
 
-    function PoleElement(id: string, x: number, y: number, z: number, ry: number, rx: number = -1, top: boolean = false): CSS3DObject {
+    function PoleElement(id, x, y, z, ry, rx = -1, top = false) {
         const div = document.createElement('div');
         const upper = document.createElement('div');
         upper.style.width = '640px';
@@ -100,7 +100,7 @@ const YouTubeGallery: React.FC = () => {
         renderer = new CSS3DRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         if (container.childElementCount === 1) {
-            container.removeChild(container.firstChild!);
+            container.removeChild(container.firstChild);
         };
         container.appendChild(renderer.domElement);
 

@@ -84,7 +84,7 @@ const App = () => {
     )
 }
 
-function Model(props: any) {
+function Model(props) {
     const mesh = useRef();
     const { nodes, materials } = useGLTF("scene.gltf");
     useFrame((state, delta) => (mesh.current.rotation.y += 0.01, mesh.current.rotation.x += 0.01, mesh.current.rotation.z += 0.01))

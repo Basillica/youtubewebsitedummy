@@ -6,8 +6,8 @@ import { useRef, useState } from 'react'
 import { useFrame, ThreeElements } from '@react-three/fiber'
 
 
-const Box = (props: ThreeElements['mesh']) => {
-    const meshRef = useRef<THREE.Mesh>(null!)
+const Box = (props) => {
+    const meshRef = useRef(null)
     const [hovered, setHover] = useState(false)
     const [active, setActive] = useState(false)
     useFrame((state, delta) => {
@@ -23,7 +23,7 @@ const Box = (props: ThreeElements['mesh']) => {
             ref={meshRef}
             scale={active ? 2 : 1}
 
-            onClick={(event: any) => {
+            onClick={(event) => {
                 setActive(!active);
             }}
 

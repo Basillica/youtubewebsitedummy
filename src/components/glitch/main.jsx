@@ -103,7 +103,7 @@ const Container = styled.div`
   }
 `;
 
-export default ({ children }: { children: any }) => {
+export default ({ children }) => {
   return (
     <>
       <div>
