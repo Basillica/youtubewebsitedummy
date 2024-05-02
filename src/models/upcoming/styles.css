@@ -53,6 +53,15 @@ a {
     color: rgba(127, 255, 255, 0.75);
 }
 
+.element .details {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    right: 0px;
+    font-size: 9px;
+    color: rgba(127, 255, 255, 0.75);
+}
+
 button {
     color: rgba(121, 167, 247, 0.75);
     background: transparent;

@@ -7,7 +7,8 @@ import { MeshDistortMaterial, Sphere } from "@react-three/drei";
 import { OrbitControls, Sky, Stars, useGLTF } from "@react-three/drei";
 import { Glitch } from "../../components/glitch";
 import { useLoader } from "@react-three/fiber";
-import { PeriodicTable } from "../periodic";
+import { UpcomingVideos } from "../upcoming";
+import { Videos } from "../videos";
 import { YouTubeGallery } from "../youtube";
 
 const App = (props) => {
@@ -15,8 +16,8 @@ const App = (props) => {
         <>
             {props.state === "HOME" && <Home />}
             {props.state === "YOUTUBE" && <YouTubeGallery />}
-            {props.state === "ARCHIVE" && <PeriodicTable />}
-            {props.state === "UPCOMING" && <PeriodicTable />}
+            {props.state === "VIDEOS" && <Videos />}
+            {props.state === "UPCOMING" && <UpcomingVideos />}
         </>
     );
 };

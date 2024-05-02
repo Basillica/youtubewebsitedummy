@@ -22,8 +22,8 @@ const Navbar = (props) => {
                     </a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => handleClick(e, "ARCHIVE")}>
-                        Archive
+                    <a href="#" onClick={(e) => handleClick(e, "VIDEOS")}>
+                        Videos
                     </a>
                 </li>
                 <li>
