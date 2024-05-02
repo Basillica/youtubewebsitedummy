@@ -10,72 +10,8 @@ const Videos = () => {
     const rendererRef = useRef(null);
     const containerRef = useRef(null);
     const controlsRef = useRef(null);
-    const [link, setLink] = useState("");
+    const [link, setLink] = useState("lggZXEoueFM");
     const [video, setVideo] = useState(true);
-
-    const table = [
-        ["H", "Hydrogen", "1.00794", 1, 1],
-        ["He", "Helium", "4.002602", 18, 1],
-        ["Li", "Lithium", "6.941", 1, 2],
-        ["Be", "Beryllium", "9.012182", 2, 2],
-        ["B", "Boron", "10.811", 13, 2],
-        ["C", "Carbon", "12.0107", 14, 2],
-        ["N", "Nitrogen", "14.0067", 15, 2],
-        ["O", "Oxygen", "15.9994", 16, 2],
-        ["F", "Fluorine", "18.9984032", 17, 2],
-        ["Ne", "Neon", "20.1797", 18, 2],
-        ["Na", "Sodium", "22.98976...", 1, 3],
-        ["Mg", "Magnesium", "24.305", 2, 3],
-        ["Al", "Aluminium", "26.9815386", 13, 3],
-        ["Si", "Silicon", "28.0855", 14, 3],
-        ["P", "Phosphorus", "30.973762", 15, 3],
-        ["S", "Sulfur", "32.065", 16, 3],
-        ["Cl", "Chlorine", "35.453", 17, 3],
-        ["Ar", "Argon", "39.948", 18, 3],
-        ["K", "Potassium", "39.948", 1, 4],
-        ["Ca", "Calcium", "40.078", 2, 4],
-        ["Sc", "Scandium", "44.955912", 3, 4],
-        ["Ti", "Titanium", "47.867", 4, 4],
-        ["V", "Vanadium", "50.9415", 5, 4],
-        ["Cr", "Chromium", "51.9961", 6, 4],
-        ["Mn", "Manganese", "54.938045", 7, 4],
-        ["Fe", "Iron", "55.845", 8, 4],
-        ["Co", "Cobalt", "58.933195", 9, 4],
-        ["Ni", "Nickel", "58.6934", 10, 4],
-        ["Cu", "Copper", "63.546", 11, 4],
-        ["Zn", "Zinc", "65.38", 12, 4],
-        ["Ga", "Gallium", "69.723", 13, 4],
-        ["Ge", "Germanium", "72.63", 14, 4],
-        ["As", "Arsenic", "74.9216", 15, 4],
-        ["Se", "Selenium", "78.96", 16, 4],
-        ["Br", "Bromine", "79.904", 17, 4],
-        ["Kr", "Krypton", "83.798", 18, 4],
-        ["Rb", "Rubidium", "85.4678", 1, 5],
-        ["Sr", "Strontium", "87.62", 2, 5],
-        ["Y", "Yttrium", "88.90585", 3, 5],
-        ["Zr", "Zirconium", "91.224", 4, 5],
-        ["Nb", "Niobium", "92.90628", 5, 5],
-        ["Mo", "Molybdenum", "95.96", 6, 5],
-        ["Tc", "Technetium", "(98)", 7, 5],
-        ["Ru", "Ruthenium", "101.07", 8, 5],
-        ["Rh", "Rhodium", "102.9055", 9, 5],
-        ["Pd", "Palladium", "106.42", 10, 5],
-        ["Ag", "Silver", "107.8682", 11, 5],
-        ["Cd", "Cadmium", "112.411", 12, 5],
-        ["In", "Indium", "114.818", 13, 5],
-        ["Bh", "Bohrium", "(272)", 7, 7],
-        ["Hs", "Hassium", "(270)", 8, 7],
-        ["Mt", "Meitnerium", "(276)", 9, 7],
-        ["Ds", "Darmstadium", "(281)", 10, 7],
-        ["Rg", "Roentgenium", "(280)", 11, 7],
-        ["Cn", "Copernicium", "(285)", 12, 7],
-        ["Nh", "Nihonium", "(286)", 13, 7],
-        ["Fl", "Flerovium", "(289)", 14, 7],
-        ["Mc", "Moscovium", "(290)", 15, 7],
-        ["Lv", "Livermorium", "(293)", 16, 7],
-        ["Ts", "Tennessine", "(294)", 17, 7],
-        ["Og", "Oganesson", "(294)", 18, 7],
-    ];
 
     const VIDEOS = [
         ["1st", "h8gyn2RylZo", "V", 1],
@@ -126,10 +62,7 @@ const Videos = () => {
         camera.position.z = 3000;
         scene = new THREE.Scene();
 
-        // table
         for (let i = 0; i < VIDEOS.length; i++) {
-            // ["H", "Hydrogen", "1.00794", 1, 1],
-            // ["28th", "qMxbHdjxcmk", "S", 28],
             const element = document.createElement("div");
             element.className = "element";
             element.style.backgroundColor = "rgba(0,127,127," + (Math.random() * 0.5 + 0.5) + ")";
@@ -162,8 +95,6 @@ const Videos = () => {
             //
             const object = new THREE.Object3D();
             object.position.x = Number(VIDEOS[i][3]) * 140 - 1330;
-            // object.position.y = -Number(VIDEOS[i][4]) * 180 + 990;
-
             targets.table.push(object);
         }
 
@@ -191,7 +122,6 @@ const Videos = () => {
         controls = new TrackballControls(camera, renderer.domElement);
         controls.minDistance = 500;
         controls.maxDistance = 6000;
-
         controls.addEventListener("change", render);
         window.addEventListener("resize", onWindowResize);
     }
@@ -255,6 +185,7 @@ const Videos = () => {
         <div style={{ textAlign: "center" }}>
             <div id="container" ref={containerRef}></div>
             <div id="menu">
+                <p style={{ fontSize: "10px", color: "green" }}> Click any tile above, drag around and pinch</p>
                 <button id="table" onClick={() => console.log()} style={{ background: "grey", borderRadius: "20px" }}>
                     <a
                         type="button"

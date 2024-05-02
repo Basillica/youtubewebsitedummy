@@ -17,7 +17,7 @@ const Navbar = (props) => {
                     </a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => handleClick(e, "YOUTUBE")}>
+                    <a href="#" onClick={(e) => handleClick(e, "LATEST")}>
                         Latest
                     </a>
                 </li>
@@ -31,39 +31,14 @@ const Navbar = (props) => {
                         Upcoming
                     </a>
                 </li>
+                <li>
+                    <a href="mailto:ezeabasilianthony@gmail.com?subject=I%20would%20like%20to%20recommend%20a%20fastastic%20topic%20for%20you%20to%20teach%20on%20your%20channel">
+                        {" "}
+                        Recommend
+                    </a>
+                </li>
             </ul>
         </nav>
-        // <nav style={{ position: "absolute", top: 0, left: 0, width: "100%", background: "blue" }}>
-        //     <h1>
-        //         {" "}
-        //         <a href="/">🎓MakeDevEasy</a>{" "}
-        //     </h1>
-        //     <p>
-        //         <a href="mailto:ezeabasilianthony@gmail.com">Suggest a Video Idea</a>
-        //     </p>
-        //     <ul style={{ width: "90%" }}>
-        //         <li>
-        //             <a href="#" onClick={(e) => handleClick(e, "HOME")}>
-        //                 Home
-        //             </a>
-        //         </li>
-        //         <li>
-        //             <a href="#" onClick={(e) => handleClick(e, "YOUTUBE")}>
-        //                 Latest
-        //             </a>
-        //         </li>
-        //         <li>
-        //             <a href="#" onClick={(e) => handleClick(e, "ARCHIVE")}>
-        //                 Archive
-        //             </a>
-        //         </li>
-        //         <li>
-        //             <a href="#" onClick={(e) => handleClick(e, "UPCOMING")}>
-        //                 Upcoming
-        //             </a>
-        //         </li>
-        //     </ul>
-        // </nav>
     );
 };
 

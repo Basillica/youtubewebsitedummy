@@ -9,13 +9,13 @@ import { Glitch } from "../../components/glitch";
 import { useLoader } from "@react-three/fiber";
 import { UpcomingVideos } from "../upcoming";
 import { Videos } from "../videos";
-import { YouTubeGallery } from "../youtube";
+import { LatestVideos } from "../latest";
 
 const App = (props) => {
     return (
         <>
             {props.state === "HOME" && <Home />}
-            {props.state === "YOUTUBE" && <YouTubeGallery />}
+            {props.state === "LATEST" && <LatestVideos />}
             {props.state === "VIDEOS" && <Videos />}
             {props.state === "UPCOMING" && <UpcomingVideos />}
         </>
@@ -89,7 +89,7 @@ const Home = () => {
                             args={[1, 16, 200]}
                             scale={1}
                             onClick={(e) => console.log(e)}
-                            onPointerEnter={(e) => console.log(e)}
+                            // onPointerEnter={(e) => console.log(e)}
                         >
                             <MeshDistortMaterial
                                 color="green"
@@ -106,10 +106,10 @@ const Home = () => {
                             args={[1, 16, 200]}
                             scale={1}
                             onClick={(e) => console.log(e)}
-                            onPointerEnter={(e) => console.log(e)}
+                            // onPointerEnter={(e) => console.log(e)}
                         >
                             <MeshDistortMaterial
-                                color="pink"
+                                color="grey"
                                 attach="material"
                                 distort={0.8}
                                 speed={2}
@@ -123,10 +123,10 @@ const Home = () => {
                             args={[1, 16, 200]}
                             scale={1}
                             onClick={(e) => console.log(e)}
-                            onPointerEnter={(e) => console.log(e)}
+                            // onPointerEnter={(e) => console.log(e)}
                         >
                             <MeshDistortMaterial
-                                color="white"
+                                color="grey"
                                 attach="material"
                                 distort={0.6}
                                 speed={1.8}

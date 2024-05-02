@@ -5,7 +5,7 @@ import { TrackballControls } from "three/addons/controls/TrackballControls.js";
 import { CSS3DRenderer, CSS3DObject } from "three/addons/renderers/CSS3DRenderer.js";
 import { Glitch } from "../../components/glitch";
 
-const YouTubeGallery = () => {
+const LatestVideos = () => {
     const containerRef = useRef(null);
     let camera, scene, renderer, controls;
 
@@ -188,4 +188,4 @@ const YouTubeGallery = () => {
     );
 };
 
-export default YouTubeGallery;
+export default LatestVideos;
