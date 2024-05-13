@@ -42,6 +42,16 @@ const Videos = () => {
         ["26th", "NiKGwh-5FVE", "S", 26],
         ["27th", "Mza07BPduTE", "S", 27],
         ["28th", "qMxbHdjxcmk", "S", 28],
+        ["29th", "p3YQRGDbBjM", "V", 28],
+        ["30th", "CIB48xKA6TY", "V", 28],
+        ["31th", "h8gyn2RylZo", "V", 28],
+        ["32nd", "eh-CqDuF-JU", "S", 28],
+        ["33rd", "3v8OdiNmLKI", "S", 28],
+        ["34th", "m-wb7jx8WfQ", "S", 28],
+        ["35th", "ANVXYnbjnzM", "V", 28],
+        ["36th", "PfbYfyscFIY", "V", 28],
+        ["37th", "9MQULlRFJR8", "V", 28],
+        ["38th", "-TVCEwxfOnI", "s", 28],
     ];
 
     let camera, scene, renderer, controls;

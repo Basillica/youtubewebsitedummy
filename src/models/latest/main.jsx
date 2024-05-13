@@ -3,11 +3,12 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { TrackballControls } from "three/addons/controls/TrackballControls.js";
 import { CSS3DRenderer, CSS3DObject } from "three/addons/renderers/CSS3DRenderer.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Glitch } from "../../components/glitch";
 
 const LatestVideos = () => {
     const containerRef = useRef(null);
-    let camera, scene, renderer, controls;
+    let camera, scene, renderer, controls, ctrl;
 
     function Element(id, x, y, z, ry, rx = -1) {
         const div = document.createElement("div");
@@ -83,6 +84,7 @@ const LatestVideos = () => {
     function animate() {
         requestAnimationFrame(animate);
         controls.update();
+        // ctrl.update();
         renderer.render(scene, camera);
     }
 
@@ -102,16 +104,31 @@ const LatestVideos = () => {
         container.appendChild(renderer.domElement);
 
         const group = new THREE.Group();
-        group.add(Element("mv_YElHqCXE", 0, 0, 320, 0));
-        group.add(PoleElement("mv_YElHqCXE", 0, -320, 0, Math.PI, -Math.PI / 2, false));
-        group.add(Element("lggZXEoueFM", 320, 0, 0, Math.PI / 2));
-        group.add(Element("zgtNpm1PDtY", 0, 0, -320, Math.PI));
+        group.add(Element("CIB48xKA6TY", 0, 0, 320, 0));
+        group.add(PoleElement("h8gyn2RylZo", 0, -320, 0, Math.PI, -Math.PI / 2, false));
+        group.add(Element("ANVXYnbjnzM", 320, 0, 0, Math.PI / 2));
+        group.add(Element("PfbYfyscFIY", 0, 0, -320, Math.PI));
         group.add(PoleElement("sHkAk0g4f7U", 0, 320, 0, -Math.PI, Math.PI / 2, true));
-        group.add(Element("BtcadKxMm5Y", -320, 0, 0, -Math.PI / 2));
+        group.add(Element("p3YQRGDbBjM", -320, 0, 0, -Math.PI / 2));
         scene.add(group);
 
         controls = new TrackballControls(camera, renderer.domElement);
         controls.rotateSpeed = 4;
+
+        // ctrl = new OrbitControls(camera, renderer.domElement);
+        // ctrl.autoRotate = false;
+        // ctrl.enablePan = false;
+        // ctrl.enableZoom = false;
+        // ctrl.enableRotate = true;
+        // ctrl.maxPolarAngle = Math.PI / 4;
+        // ctrl.minPolarAngle = Math.PI / 4;
+        // <OrbitControls
+        //     autoRotate
+        //     enablePan={false}
+        //     enableZoom={false}
+        //     maxPolarAngle={Math.PI / 2}
+        //     minPolarAngle={Math.PI / 2}
+        // />;
 
         window.addEventListener("resize", onWindowResize);
 
@@ -125,6 +142,12 @@ const LatestVideos = () => {
             controls.addEventListener("end", function () {
                 blocker.style.display = "none";
             });
+            // ctrl.addEventListener("start", function () {
+            //     blocker.style.display = "";
+            // });
+            // ctrl.addEventListener("end", function () {
+            //     blocker.style.display = "none";
+            // });
         }
     }
 
