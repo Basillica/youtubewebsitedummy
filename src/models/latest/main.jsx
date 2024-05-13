@@ -79,6 +79,7 @@ const LatestVideos = () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
+        render();
     }
 
     function animate() {
@@ -114,6 +115,10 @@ const LatestVideos = () => {
 
         controls = new TrackballControls(camera, renderer.domElement);
         controls.rotateSpeed = 4;
+        controls.minDistance = 800;
+        controls.maxDistance = 4000;
+        controls.addEventListener("change", render);
+        window.addEventListener("resize", onWindowResize);
 
         // ctrl = new OrbitControls(camera, renderer.domElement);
         // ctrl.autoRotate = false;
@@ -149,6 +154,10 @@ const LatestVideos = () => {
             //     blocker.style.display = "none";
             // });
         }
+    }
+
+    function render() {
+        renderer.render(scene, camera);
     }
 
     useEffect(() => {
